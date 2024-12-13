@@ -23,7 +23,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'random = mypkg.random:main',
+            'random_number_generator = mypkg.random_number_generator:main',
         ],
     },
 )
