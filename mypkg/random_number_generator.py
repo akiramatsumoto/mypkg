@@ -4,12 +4,12 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Int16
 
-class talker(Node):
+class Random(Node):
     def __init__(self):
-        super().__init__("talker")
-        self.pub = self.create_publisher(Int16, "countup", 10)
+        super().__init__("random")
+        self.pub = self.create_publisher(Int16, "random_number", 10)
         self.n = 0
-        self.create_timer(0.5, self.cb)
+        self.create_timer(0.05, self.cb)
 
 
     def cb(self):
@@ -21,5 +21,5 @@ class talker(Node):
 
 def main():
     rclpy.init()
-    node = Talker()
+    node = Random()
     rclpy.spin(node)
