@@ -9,7 +9,11 @@ class Random(Node):
     def __init__(self):
         super().__init__("random")
         self.pub = self.create_publisher(Int16, "random_number", 10)
-        self.n = random.randrange(10)
+        self.i = 1
+        self.n = []
+        while 1:
+            i += 1
+            self.n[i] = random.randrange(10)
         self.create_timer(0.05, self.cb)
 
 
