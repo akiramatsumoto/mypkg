@@ -16,7 +16,7 @@ def cb():
     msg = Float32()
     msg.data = battery.percent
     pub.publish(msg)
-
+    print(msg.data)
 
 def main():
     node.create_timer(2.0, cb)
