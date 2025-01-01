@@ -8,6 +8,9 @@ colcon build
 source $dir/.bashrc
 
 ros2 run mypkg battery_monitor &
-ros2 topic echo /batterylevel
-[ $? = 0 ] || exit 1
-exit 0
+NODE_PID=$!
+timeout 10 ros2 topic echo /batterylevel | tee - /tmp/mypkg.log
+kill $NODE_PID
+
+percent=$(cat /tmp/mypkg.log | grep data | head -n 1 | sed 's/data://')
+echo "電池残量"$percent"%"
