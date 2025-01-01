@@ -13,4 +13,8 @@ timeout 10 ros2 topic echo /batterylevel | tee - /tmp/mypkg.log
 kill $NODE_PID
 
 percent=$(cat /tmp/mypkg.log | grep data | head -n 1 | sed 's/data://')
-echo "電池残量"$percent"%"
+if (( $(echo "$percent >= 0" | bc -l) )) && (( $(echo "$percent <= 100" | bc -l) )); then
+    exit 0
+else
+    echo 1
+fi
