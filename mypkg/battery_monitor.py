@@ -13,6 +13,9 @@ pub = node.create_publisher(Float32, "batterylevel", 10)
 battery = psutil.sensors_battery()
 
 def cb():
+    if battery is None:
+        print("Battery information is not available.")
+        return
     msg = Float32()
     msg.data = battery.percent
     pub.publish(msg)

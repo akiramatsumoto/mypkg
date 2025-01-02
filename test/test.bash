@@ -9,7 +9,7 @@ cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
 
-timeout 20 ros2 run mypkg battery_monitor | tee - /tmp/mypkg.log
+timeout 60 ros2 run mypkg battery_monitor | tee - /tmp/mypkg.log
 
 cat /tmp/mypkg.log
 percent=$(cat /tmp/mypkg.log | head -n 1)
