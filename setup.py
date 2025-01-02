@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2024 Akira Matsumoto <akiram8427@gmail.com>
+# SPDX-License-Identifier: BSD-3-Clause
 from setuptools import find_packages, setup
 import os
 from glob import glob
@@ -23,8 +26,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'talker = mypkg.talker:main',
-            'listener = mypkg.listener:main',
+            'battery_monitor = mypkg.battery_monitor:main',
         ],
     },
 )
