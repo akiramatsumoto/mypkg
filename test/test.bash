@@ -16,6 +16,6 @@ percent=$(cat /tmp/mypkg.log | head -n 1)
 if (( $(echo "$percent >= 0" | bc -l) )) && (( $(echo "$percent <= 100" | bc -l) )); then
     exit 0
 else
-    echo 1
+    exit 1
 fi
 
