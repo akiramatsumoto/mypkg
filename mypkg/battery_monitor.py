@@ -42,7 +42,7 @@ def main():
         try:
             battery_status = provider.get_battery_status()
             msg = Float32()
-            msg.data = battery_status
+            msg.data = float(battery_status)
             pub.publish(msg)
         except RuntimeError as e:
             node.get_logger().warn(str(e))
