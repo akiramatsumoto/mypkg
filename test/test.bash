@@ -9,7 +9,10 @@ cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
 
-timeout 60 ros2 run mypkg battery_monitor | tee - /tmp/mypkg.log
+ros2 run mypkg battery_monitor &
+NODE_PID=$!
+timeout 60 ros2 topic echo batterylevel > - /tmp/mypkg.log
+kill -9 $NODE_PID
 
 cat /tmp/mypkg.log
 percent=$(cat /tmp/mypkg.log | head -n 1)
