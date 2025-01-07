@@ -7,6 +7,9 @@
 パソコンの電池残量を調べ, 2秒ごとに送信します.
 #### 送信先トピック
 - batterylevel
+## 注意点
+- [resource/mypkg](https://github.com/akiramatsumoto/mypkg/blob/kanashi/resource/mypkg)は空のファイルですが, [setup.py](https://github.com/akiramatsumoto/mypkg/blob/kanashi/setup.py)を用いてビルドをする際に使用しているので消さないでください.
+
 ## ROSバージョン
 - ROS 2 Humble Hawksbill（ローカル環境, およびGitHub Actionsの両方で使用）
 ## ライセンス
