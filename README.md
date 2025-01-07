@@ -1,4 +1,5 @@
 # mypkg
+[![test](https://github.com/akiramatsumoto/mypkg/actions/workflows/test.yml/badge.svg)](https://github.com/akiramatsumoto/mypkg/actions/workflows/test.yml)  
 ロボットシステム学の講義で提出するためのROS 2のパッケージです.  
 パソコンの電池残量をトピック```/batterylevel```から出します.
 ## ノード
