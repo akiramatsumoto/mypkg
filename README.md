@@ -8,7 +8,7 @@
 #### 送信先トピック
 - batterylevel
 ## ROSバージョン
-- ROS 2 Humble Hawksbill（ローカル環境、およびGitHub Actionsの両方で使用）
+- ROS 2 Humble Hawksbill（ローカル環境, およびGitHub Actionsの両方で使用）
 ## ライセンス
-- このパッケージは3条項BSDライセンスの下，再頒布および使用が許可されます.
+- このパッケージは3条項BSDライセンスの下, 再頒布および使用が許可されます.
 - © 2024 Akira Matsumoto
