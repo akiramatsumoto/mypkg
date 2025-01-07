@@ -31,10 +31,14 @@ def main():
     pub = node.create_publisher(Float32, "batterylevel", 10)
 
     # 環境変数でモックか実機かを切り替える
-    # 環境変数USE_MOCK_BATTERYが設定されていればmock_value=75に
     use_mock = os.getenv("USE_MOCK_BATTERY", "false").lower() == "true"
+    mock_value = os.getenv("MOCK_BATTERY_VALUE", "50")
+    try:
+        mock_value = float(mock_value)
+    except ValueError:
+        mock_value = 50
     if use_mock:
-        provider = MockBatteryInfoProvider(mock_value=75)
+        provider = MockBatteryInfoProvider(mock_value=mock_value)
     else:
         provider = BatteryInfoProvider()
 
