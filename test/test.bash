@@ -9,12 +9,13 @@ cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
 
-timeout 60 ros2 run mypkg battery_monitor | tee - /tmp/mypkg.log
+ros2 run mypkg battery_monitor &
+NODE_PID=$!
+percent=$(ros2 topic echo batterylevel --once | grep -oE '[0-9]+(\.[0-9]+)?')
+kill -9 $NODE_PID
 
-cat /tmp/mypkg.log
-percent=$(cat /tmp/mypkg.log | head -n 1)
 if (( $(echo "$percent >= 0" | bc -l) )) && (( $(echo "$percent <= 100" | bc -l) )); then
-    exit 0
+    echo 0
 else
     exit 1
 fi
