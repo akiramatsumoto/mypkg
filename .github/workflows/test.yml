@@ -11,6 +11,8 @@ jobs:
           apt-get update
           apt-get install -y bc rsync
       - name: build and test
+        env:
+          USE_MOCK_BATTERY: true
         run: |
           rsync -av ./ /root/ros2_ws/src/mypkg/
           cd /root/ros2_ws
