@@ -15,7 +15,7 @@ percent=$(ros2 topic echo batterylevel --once | grep -oE '[0-9]+(\.[0-9]+)?')
 kill -9 $NODE_PID
 
 if (( $(echo "$percent >= 0" | bc -l) )) && (( $(echo "$percent <= 100" | bc -l) )); then
-    echo 0
+    exit 0
 else
     exit 1
 fi
