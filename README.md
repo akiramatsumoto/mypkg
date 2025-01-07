@@ -8,7 +8,7 @@
 #### 送信先トピック
 - batterylevel
 ## 注意点
-- [resource/mypkg](https://github.com/akiramatsumoto/mypkg/blob/kanashi/resource/mypkg)は空ですが, [setup.py](https://github.com/akiramatsumoto/mypkg/blob/kanashi/setup.py)によるビルド時に必要なため削除しないでください.
+- [resource/mypkg](https://github.com/akiramatsumoto/mypkg/blob/kanashi/resource/mypkg)には何も記述されていませんが, [setup.py](https://github.com/akiramatsumoto/mypkg/blob/kanashi/setup.py)によるビルド時に必要なため削除しないでください.
 
 ## ROSバージョン
 - ROS 2 Humble Hawksbill（ローカル環境, およびGitHub Actionsの両方で使用）
